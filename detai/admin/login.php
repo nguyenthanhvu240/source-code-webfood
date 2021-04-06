@@ -30,7 +30,7 @@
             Username:</br>
             <input type='text' name='username' placeholder='Enter Username'></br></br>
             Password:</br>
-            <input type='password' name='username' placeholder='Enter Password'></br></br>
+            <input type='password' name='password' placeholder='Enter Password'></br></br>
 
             <input type='submit' name='submit' value='Login' class='btn-primary'>
             </br></br>
@@ -47,7 +47,7 @@
     if(isset($_POST['submit']))
     {
         $username = $_POST['username'];
-        $password = md5($_POST['password']); 
+        $password = $_POST['password']; 
 
         $sql = "SELECT * FROM tbl_admin WHERE username='$username' AND password='$password' ";
         $res = mysqli_query($conn,$sql);
