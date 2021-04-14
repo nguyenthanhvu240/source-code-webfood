@@ -3,6 +3,13 @@
     <div class='wrapper'>
         <h1>Change Password</h1>
         <br><br>
+        
+        <?php
+            if(isset($_GET['id']))
+            {
+                $id=$_GET['id'];    //Add this line
+            }
+         ?>
 
         <form action='' method='POST'>
                 <table class='tbl-30'>
@@ -39,9 +46,9 @@
     if(isset($_POST['submit']))
     {
         $id = $_POST['id'];
-        $current_password = md5($_POST['current_password']);
-        $new_password = md5($_POST['new_password']);
-        $confirm_password = md5($_POST['confirm_password']);
+        $current_password = ($_POST['current_password']);
+        $new_password = ($_POST['new_password']);
+        $confirm_password = ($_POST['confirm_password']);
 
         $sql = "SELECT * FROM tbl_admin WHERE id ='$id' AND password='$current_password' ";
         $res = mysqli_query($conn,$sql);
@@ -56,7 +63,7 @@
                 {
                     $sql2 = "UPDATE tbl_admin SET password='$new_password' WHERE id='$id' ";
                     
-                    $res = mysqli_query($conn,$sql);
+                    $res2 = mysqli_query($conn,$sql2);
 
                     if($res2 == true)
                     {
