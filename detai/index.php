@@ -48,7 +48,7 @@
                                     else
                                     {
                                         ?>
-                                        <img src="<?php echo SITEURL;?>images/category/<?php echo $image_name;?>" alt="Pizza" class="img-responsive img-curve">
+                                        <img src="<?php echo SITEURL;?>images/category/<?php echo $image_name;?>" alt="Pizza" class="img-responsive img-curve" width="210px" height="200px">
                                         <?php
                                     }
                                 ?>
